@@ -1,0 +1,75 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<ScrollTabs TabId="TabId1" OnTabChanged="OnTabChanged">
+    <Tab Text="Tab 1" Value="Tab1">
+        <h2>Content Tab 1</h2>
+        <p>
+            This is the content for the Tab 1. It is enabled.
+        </p>
+    </Tab>
+    <Tab Text="Tab 2" Value="Tab2">
+        <h2>Content Tab 2</h2>
+        <p>
+            This is the content for the Tab 2. It is enabled.
+        </p>
+    </Tab>
+    <Tab Text="Tab 3" Value="Tab3">
+        <h2>Content Tab 3</h2>
+        <p>
+            This is the content for the Tab 3. It is enabled.
+        </p>
+    </Tab>
+    <Tab Text="Tab 4" Enabled="@IsEnabled" Value="Tab4">
+        <h2>Content Tab 4</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+    <Tab Text="This is a tab" Enabled="@IsEnabled" Value="Tab5">
+        <h2>Content Tab 5</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+    <Tab Text="Another tab" Enabled="@IsEnabled" Value="Tab6">
+        <h2>Content Tab 6</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+    <Tab Text="Another tab2" Value="Tab7">
+        <h2>Content Tab 7</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+    <Tab Text="Another tab3" Value="Tab8">
+        <h2>Content Tab 8</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+    <Tab Text="Another tab4" Value="Tab8">
+        <h2>Content Tab 6</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+    <Tab Text="Another tab5" Value="Tab8">
+        <h2>Content Tab 5</h2>
+        <p>
+            This is the content for the Tab 4. It is disabled if <i>IsEnabled = false</i>
+        </p>
+    </Tab>
+</ScrollTabs>
+
+@code {
+    public bool IsEnabled = false;
+
+    public async Task OnTabChanged(Tab tab)
+    {
+        Console.WriteLine($"Tab value: {tab.Value} - Tab text: {tab.Text}");
+    }
+}

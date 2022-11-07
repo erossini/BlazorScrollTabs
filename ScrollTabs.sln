@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33020.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollTabs.Server", "ScrollTabs\Server\ScrollTabs.Server.csproj", "{A432D2EC-BD7C-4275-94F0-0B41751CF5B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollTabs.Client", "ScrollTabs\Client\ScrollTabs.Client.csproj", "{31AB8C3F-C78B-44E0-9D61-70696642A3CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollTabs.Shared", "ScrollTabs\Shared\ScrollTabs.Shared.csproj", "{FF8DC39F-B4BD-4701-9425-3BCD46E0718D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{E789F4E2-4C0C-4403-84F5-1C11BDD1AB70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{999BE06E-4E6D-4EC6-AD9D-425E4DDB051C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSC.Blazor.Components.ScrollTabs", "PSC.Blazor.Components.ScrollTabs\PSC.Blazor.Components.ScrollTabs.csproj", "{8CDF209C-E7EF-4D59-9439-7E754DB53373}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A432D2EC-BD7C-4275-94F0-0B41751CF5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A432D2EC-BD7C-4275-94F0-0B41751CF5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A432D2EC-BD7C-4275-94F0-0B41751CF5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A432D2EC-BD7C-4275-94F0-0B41751CF5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31AB8C3F-C78B-44E0-9D61-70696642A3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31AB8C3F-C78B-44E0-9D61-70696642A3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31AB8C3F-C78B-44E0-9D61-70696642A3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31AB8C3F-C78B-44E0-9D61-70696642A3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8DC39F-B4BD-4701-9425-3BCD46E0718D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8DC39F-B4BD-4701-9425-3BCD46E0718D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8DC39F-B4BD-4701-9425-3BCD46E0718D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8DC39F-B4BD-4701-9425-3BCD46E0718D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDF209C-E7EF-4D59-9439-7E754DB53373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDF209C-E7EF-4D59-9439-7E754DB53373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDF209C-E7EF-4D59-9439-7E754DB53373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDF209C-E7EF-4D59-9439-7E754DB53373}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A432D2EC-BD7C-4275-94F0-0B41751CF5B2} = {E789F4E2-4C0C-4403-84F5-1C11BDD1AB70}
+		{31AB8C3F-C78B-44E0-9D61-70696642A3CC} = {E789F4E2-4C0C-4403-84F5-1C11BDD1AB70}
+		{FF8DC39F-B4BD-4701-9425-3BCD46E0718D} = {E789F4E2-4C0C-4403-84F5-1C11BDD1AB70}
+		{8CDF209C-E7EF-4D59-9439-7E754DB53373} = {999BE06E-4E6D-4EC6-AD9D-425E4DDB051C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E0352F3-2BAD-4AED-97CE-3E0801C261EC}
+	EndGlobalSection
+EndGlobal

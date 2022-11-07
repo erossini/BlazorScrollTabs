@@ -1,0 +1,102 @@
+﻿@implements IDisposable
+@inject IJSRuntime JSRuntime
+
+    <div id="@TabId" class="scroll_tabs_theme_light">
+        @foreach (Tab tabPage in Pages)
+        {
+            <span>
+                @tabPage.Text
+            </span>
+        }
+    </div>
+    <div class="tab-content">
+        @ChildContent
+    </div>
+
+<div id="tabs2" class="scroll_tabs_theme_light">
+    <span>This is my tab</span>
+    <span>Another Tab 1</span>
+    <span>Another Tab 2</span>
+    <span>Another Tab 3</span>
+    <span>Another Tab 4</span>
+    <span>Another Tab 5</span>
+    <span>Another Tab 6</span>
+    <span>Another Tab 7</span>
+    <span>Another Tab 8</span>
+    <span>Another Tab 9</span>
+    <span>Another Tab 10</span>
+    <span>Another Tab 11</span>
+    <span>Another Tab 12</span>
+</div>
+
+@code {
+    // Create an object reference for JS
+    private DotNetObjectReference<ScrollTabs>? dotNetHelper;
+
+    [Parameter]
+    public string? TabId { get; set; }
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    [Parameter] public EventCallback<Tab> OnTabChanged { get; set; }
+
+    public Tab? ActivePage { get; set; }
+    List<Tab> Pages = new List<Tab>();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            dotNetHelper = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("Helpers.setDotNetHelper", dotNetHelper);
+        }
+
+        // Setup the tabs
+        await JSRuntime.InvokeVoidAsync("setup", TabId);
+        await JSRuntime.InvokeVoidAsync("setup", "tabs2");
+    }
+
+    internal void AddPage(Tab tabPage)
+    {
+        Pages.Add(tabPage);
+        if (Pages.Count == 1)
+            ActivePage = tabPage;
+
+        StateHasChanged();
+    }
+
+    string GetTabCSS(Tab page)
+    {
+        if (!page.Enabled)
+            return "tab-disabled";
+
+        return page == ActivePage ? "tab_selected" : "";
+    }
+
+    void ActivatePage(string text)
+    {
+        var active = Pages.Where(p => p?.Text?.Trim() == text).FirstOrDefault();
+        if (active != null)
+            ActivatePage(active);
+    }
+
+    void ActivatePage(Tab page)
+    {
+        if (page.Enabled)
+        {
+            ActivePage = page;
+            OnTabChanged.InvokeAsync(page);
+        }
+    }
+
+    [JSInvokable("ChangeTab")]
+    public async Task ChangeTab(string val)
+    {
+        ActivatePage(val);
+    }
+
+    public void Dispose()
+    {
+        dotNetHelper?.Dispose();
+    }
+}
