@@ -1,3 +1,3 @@
-﻿window.setup = (id) => {
+﻿window.setupScrollTabs = (id) => {
     $('#' + id).scrollTabs();
 }

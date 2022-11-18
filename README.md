@@ -61,10 +61,11 @@ In your `Razor` page, you can call the component like that
 
 ### Themes
 
-Embedded in the components, there are 3 theme options:
+Embedded in the components, there are 4 theme options:
 
 - Light
 - Dark
+- Grey
 - None
 
 You can use `None` to use your custom implementation.

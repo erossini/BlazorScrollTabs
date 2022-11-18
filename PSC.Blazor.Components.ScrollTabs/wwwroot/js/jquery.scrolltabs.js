@@ -17,7 +17,8 @@
             $(this.itemTag, this).last().addClass('scroll_tab_last');
             $(this.itemTag, this).first().addClass('scroll_tab_first');
 
-            $(this).html("<div class='scroll_tab_left_button'></div><div class='scroll_tab_inner'><span class='scroll_tab_left_finisher'>&nbsp;</span>" + $(this).html() + "<span class='scroll_tab_right_finisher'>&nbsp;</span></div><div class='scroll_tab_right_button'></div>");
+            $(this).html("<div class='scroll_tab_left_button'></div><div class='scroll_tab_inner'><span class='scroll_tab_left_finisher'></span>" +
+                         $(this).html() + "<span class='scroll_tab_right_finisher'></span></div><div class='scroll_tab_right_button'></div>");
 
             $('.scroll_tab_inner > span.scroll_tab_left_finisher', this).css({
                 'display': 'none'

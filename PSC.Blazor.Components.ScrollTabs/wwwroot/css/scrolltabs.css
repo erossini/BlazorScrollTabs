@@ -372,3 +372,134 @@ ul.scroll_tabs_container {
 .scroll_tabs_theme_dark div.scroll_tab_inner span.tab_selected, .scroll_tabs_theme_dark div.scroll_tab_inner li.tab_selected {
   background-color: #666666;
 }
+
+/* Grey theme */
+
+/* Set the content of the arrows to nothing, we will use a background image of our own. */
+.scroll_tabs_theme_grey .scroll_tab_left_button::before {
+	content: "\25C0";
+	line-height: 33px;
+	padding-left: 5px;
+	color: rgb(0, 27, 43, 0.6);
+}
+
+.scroll_tabs_theme_grey .scroll_tab_right_button::before {
+	content: "\25B6";
+	line-height: 33px;
+	padding-left: 5px;
+	color: rgb(0, 27, 43, 0.6);
+}
+
+/* Set up our background image (i.e. toolbar for example) behind the tab-set */
+.scroll_tabs_theme_grey div.scroll_tab_inner {
+	height: 40px;
+}
+
+	/* Setup the appearance of each individual TAB */
+	.scroll_tabs_theme_grey div.scroll_tab_inner span {
+		padding: 5px 8px;
+		line-height: 150%;
+		text-decoration: none;
+		margin-right: 15px;
+		font-size: 15px;
+		font-weight: 500;
+		color: #001b2b;
+		background-color: #ffffff;
+		cursor: pointer;
+	}
+
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.tab-disabled {
+			color: #001b2b;
+			opacity: .2;
+			cursor: default;
+		}
+
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.tab-disabled.scroll_tab_over {
+			color: #001b2b;
+			opacity: .2;
+			cursor: default;
+		}
+
+		/* Style the FIRST tab differently from the rest, inherits from above */
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_first {
+			background-color: #ffffff;
+		}
+
+		/* Style the hover state for each tab */
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_over {
+			background-color: #ffffff;
+			color: rgba(0, 27, 43, 0.3);
+		}
+
+		/* Style the hover state for the first tab (Using MULTI-CLASS selectors may not work right in older browsers) */
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_first.scroll_tab_over {
+		}
+
+		/* Style the left of the tab set if the arrows are hidden (the are is wide enough to show ALL the tabs */
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_left_finisher {
+			padding: 0px;
+			width: 10px;
+		}
+
+			/* AND HOVER STATE */
+			.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_left_finisher.scroll_tab_over {
+				background-position: 0px -120px !important;
+			}
+
+			/* AND SELECTED STATE */
+			.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_left_finisher.tab_selected {
+				background-position: 0px -200px;
+			}
+
+		/* Style the right of the tab set if the arrows are hidden (the are is wide enough to show ALL the tabs */
+		.scroll_tabs_theme_grey div.scroll_tab_inner span.scroll_tab_right_finisher {
+			padding: 0px;
+			width: 10px;
+		}
+
+/* AND HOVER STATE */
+.scroll_tabs_theme_greydiv.scroll_tab_inner span.scroll_tab_right_finisher.scroll_tab_over {
+	background-position: right -120px !important;
+}
+
+/* AND SELECTED STATE */
+.scroll_tabs_theme_greydiv.scroll_tab_inner span.scroll_tab_right_finisher.tab_selected {
+	background-position: right -200px;
+}
+
+/* Style left scrolling button */
+.scroll_tabs_theme_grey .scroll_tab_left_button {
+	height: 40px;
+}
+
+	/* Style left scrolling button HOVER */
+	.scroll_tabs_theme_grey .scroll_tab_left_button.scroll_arrow_over {
+	}
+
+	/* Style left scrolling button DISABLED */
+	.scroll_tabs_theme_grey .scroll_tab_left_button.scroll_arrow_disabled {
+	}
+
+/* Style right scrolling button */
+.scroll_tabs_theme_grey .scroll_tab_right_button {
+	height: 40px;
+}
+
+	/* Style right scrolling button HOVER */
+	.scroll_tabs_theme_grey .scroll_tab_right_button.scroll_arrow_over {
+	}
+
+	/* Style right scrolling button DISABLED */
+	.scroll_tabs_theme_grey .scroll_tab_right_button.scroll_arrow_disabled {
+	}
+
+/* Style SELECTED (depressed) tab */
+.scroll_tabs_theme_grey div.scroll_tab_inner span.tab_selected {
+	background-color: rgba(0, 27, 43, 0.6);
+	color: #ffffff;
+}
+
+	/* Style SELECTED (depressed) if it's the FIRST tab */
+	.scroll_tabs_theme_grey div.scroll_tab_inner span.tab_selected.scroll_tab_first {
+		background-position: -40px -200px;
+	}
